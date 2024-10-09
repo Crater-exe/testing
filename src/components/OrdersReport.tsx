@@ -3,6 +3,7 @@
 import { getJSONData } from '@/tools/Toolkit';
 import { Orders, Order } from '@/tools/orders.model';
 import { useEffect, useState } from 'react';
+import LoadingOverlay from './LoadingOverlay';
 
 export default function OrdersReport({setAppState, appState}:{setAppState:Function, appState:number}) {
     // retrieve server sided script
@@ -37,5 +38,14 @@ export default function OrdersReport({setAppState, appState}:{setAppState:Functi
                 !!! render out orders content here !!!
             </>
         );
+    } else if (appState == 2) {
+        return (
+            <>
+                <div className='flex items-center'>
+                    <LoadingOverlay show={(appState == 2) ? true : false} bgColor="#b82308" />
+                    <div className='ml-3 text-lg'>Loading</div>
+                </div>
+            </>
+        )
     }
 }

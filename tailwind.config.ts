@@ -13,6 +13,7 @@ const config: Config = {
         content:"#545454",
         greyAccent:"#EDEDED",
         greyContent:"#939393",
+        dis:"#737373",
         buttonDisabled:"#fccbc2",
       }
     },

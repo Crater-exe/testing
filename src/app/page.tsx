@@ -21,8 +21,6 @@ export default function Home() {
   return (
     <main className="grid grid-rows-1 grid-cols-1 gap-0 text-content">
 
-      <LoadingOverlay show={(appState == 2) ? true : false} bgColor="#b82308" />
-
       <Banner />
 
       <aside className="flex flex-nowrap items-center justify-between p-5 flex-col md:flex-row">
@@ -32,8 +30,8 @@ export default function Home() {
         <div>
           <div className="text-accent text-3xl font-bold mb-2.5">Welcome loyal pizza dispatcher....</div>Click the &quot;Get Orders&quot; button below to view all current orders that need to be delivered.
           <div>
-              <button 
-                className="bg-accent border-none rounded-md p-2.5 text-white hover:bg-greyContent mt-5"
+              <button disabled={(appState == 2) ? true : false}
+                className="bg-accent border-none rounded-md p-2.5 text-white hover:bg-greyContent mt-5 disabled:bg-dis"
                 onClick={showOrders}>Get Orders</button>
           </div>
         </div>
