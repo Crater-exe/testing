@@ -4,8 +4,6 @@ import Banner from "@/components/Banner";
 import OrdersReport from "@/components/OrdersReport";
 import { useState } from "react";
 
-import LoadingOverlay from "@/components/LoadingOverlay";
-
 export default function Home() {
 
   // ---------------------------- event handlers

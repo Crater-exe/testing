@@ -1,9 +1,10 @@
 "use client";
 
 import { getJSONData } from '@/tools/Toolkit';
-import { Orders, Order } from '@/tools/orders.model';
+import { Orders, Order, Topping, Note } from '@/tools/orders.model';
 import { useEffect, useState } from 'react';
 import LoadingOverlay from './LoadingOverlay';
+import OrderDetails from './OrderDetails';
 
 export default function OrdersReport({setAppState, appState}:{setAppState:Function, appState:number}) {
     // retrieve server sided script
@@ -35,7 +36,11 @@ export default function OrdersReport({setAppState, appState}:{setAppState:Functi
     } else if (appState == 3) {
         return (
             <>
-                !!! render out orders content here !!!
+                {orders.map((order:Order, i:number) => (
+                    <div key={i}>
+                        <OrderDetails order={order}></OrderDetails>
+                    </div>
+                ))}
             </>
         );
     } else if (appState == 2) {
